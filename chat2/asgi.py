@@ -13,6 +13,9 @@ from channels.auth import AuthMiddlewareStack
 from channels.routing import ProtocolTypeRouter, URLRouter
 
 from chat.consumers import ChatConsumer
+import chat.routing
+
+
 
 application = ProtocolTypeRouter({
     # Django's ASGI application to handle traditional HTTP requests
@@ -20,7 +23,9 @@ application = ProtocolTypeRouter({
 
     # WebSocket chat handler
     "websocket": AuthMiddlewareStack(
-        URLRouter([
+        URLRouter(
+            chat.routing.websocket_urlpatterns,
+            [
             url(r"^chat/$", ChatConsumer.as_asgi()),
         ])
     ),
