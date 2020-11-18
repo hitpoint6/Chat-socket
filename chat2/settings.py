@@ -25,7 +25,7 @@ SECRET_KEY = 'g4r#bnq*n31pspv^r-pf#$)3ff+0z^31hfvh^$lie=40p0s5!w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['159.65.67.154', 'www.walnuteducation.com']
 
 
 # Application definition
